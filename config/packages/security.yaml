@@ -21,7 +21,7 @@ security:
             provider: app_user_provider
             guard:
                 authenticators:
-                    - App\Security\Admin\LoginFromAuthenticator
+                    - App\Security\Authenticator\Admin\LoginFromAuthenticator
             remember_me:
                 secret: '%kernel.secret%'
                 lifetime: 604800 # 1 week
@@ -34,7 +34,7 @@ security:
             provider: app_user_provider
             guard:
                 authenticators:
-                    - App\Security\LoginFromAuthenticator
+                    - App\Security\Authenticator\Main\LoginFromAuthenticator
             remember_me:
                 secret: '%kernel.secret%'
                 lifetime: 604800 # 1 week

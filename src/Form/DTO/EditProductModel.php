@@ -2,6 +2,7 @@
 
 namespace App\Form\DTO;
 
+use App\Entity\Category;
 use App\Entity\Product;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -28,7 +29,7 @@ class EditProductModel
 
     /**
      * @Assert\File(
-     *     maxSize = "5024",
+     *     maxSize = "502400",
      *     mimeTypes = {"image/jpeg", "image/png"},
      *     mimeTypesMessage = "Please upload a valid image"
      * )
@@ -48,6 +49,12 @@ class EditProductModel
     public $description;
 
     /**
+     * @Assert\NotBlank(message="Please select the category")
+     * @var Category
+     */
+    public $category;
+
+    /**
      * @var bool
      */
     public $isPublished;
@@ -57,6 +64,10 @@ class EditProductModel
      */
     public $isDeleted;
 
+    /**
+     * @param Product|null $product
+     * @return static
+     */
     public static function makeFormProduct(?Product $product): self
     {
         $model = new self();
