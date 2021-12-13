@@ -51,7 +51,7 @@ class EditProductFormType extends AbstractType
                 ],
             ])
             ->add('description', TextareaType::class, [
-                'label' => 'Quantity',
+                'label' => 'Description',
                 'required' => false,
                 'attr' => [
                     'class' => 'form-control',

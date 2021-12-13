@@ -25,7 +25,7 @@ security:
             remember_me:
                 secret: '%kernel.secret%'
                 lifetime: 604800 # 1 week
-                path: /admin
+                path: /admin/
             logout:
                 path: admin_security_logout
         main:
