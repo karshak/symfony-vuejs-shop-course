@@ -37,7 +37,7 @@ class Category
     /**
      * @ORM\Column(type="string", length=100)
      *
-     * @Groups({"category:list", "category:item", "product:list", "product:item"})
+     * @Groups({"category:list", "category:item", "product:list", "product:item", "order:item"})
      */
     private $title;
 
